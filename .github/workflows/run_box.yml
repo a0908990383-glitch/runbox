@@ -1,0 +1,25 @@
+name: Run DarkSoftQ Simulation 
+ 
+on: 
+  workflow_dispatch: 
+ 
+jobs: 
+  run: 
+    runs-on: ubuntu-latest 
+    steps: 
+      - name: Checkout private code 
+        uses: actions/checkout@v4 
+        with: 
+          repository: 'a0908990383-glitch/核心' 
+          token: ${{ secrets.MY_CODE_REPO_TOKEN }} 
+          path: core_code 
+ 
+      - name: Install dependencies 
+        run: | 
+          cd core_code 
+          pip install numpy tomli 
+ 
+      - name: Run simulation 
+        run: | 
+          cd core_code 
+          python dsq35d.py --config dsq35d.toml --output run35000 
