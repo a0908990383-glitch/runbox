@@ -10,7 +10,7 @@ jobs:
       - name: Checkout private code 
         uses: actions/checkout@v4 
         with: 
-          repository: 'a0908990383-glitch/核心' 
+          repository: 'a0908990383-glitch/-' 
           token: ${{ secrets.MY_CODE_REPO_TOKEN }} 
           path: core_code 
  
